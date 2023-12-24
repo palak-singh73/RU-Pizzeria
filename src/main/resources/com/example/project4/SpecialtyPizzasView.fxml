@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project4.SpecialtyPizzaController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="207.20001220703125" minHeight="10.0" prefHeight="150.4" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="248.99996337890624" minHeight="10.0" prefHeight="236.79999999999998" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="120.39999999999998" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+         <children>
+            <ComboBox fx:id="specialtyMenu" onAction="#specialtyChosen" prefWidth="150.0" promptText="Pick a Specialty">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </ComboBox>
+            <RadioButton fx:id="spSmallButton" mnemonicParsing="false" onAction="#pricing" prefWidth="100.0" text="Small">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Size" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="spMediumButton" mnemonicParsing="false" onAction="#pricing" prefWidth="100.0" text="Medium" toggleGroup="$Size">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="spLargeButton" mnemonicParsing="false" onAction="#pricing" prefWidth="100.0" text="Large" toggleGroup="$Size">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </RadioButton>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="20.0" />
+         </opaqueInsets>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" GridPane.rowIndex="1">
+         <children>
+            <Label text="Toppings">
+               <font>
+                  <Font name="Dubai Light" size="14.0" />
+               </font>
+            </Label>
+            <ListView fx:id="spToppingsList" prefHeight="200.0" prefWidth="200.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </ListView>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label text="Sauce">
+               <font>
+                  <Font name="Dubai Light" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="spSauceDisplay" editable="false">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </VBox.margin>
+            </TextField>
+            <CheckBox fx:id="spExtraSauceCheckbox" mnemonicParsing="false" onAction="#pricing" prefWidth="100.0" text="Extra Sauce">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="spExtraCheeseCheckbox" mnemonicParsing="false" onAction="#pricing" prefWidth="100.0" text="Extra Cheese">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </CheckBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="83.0" prefWidth="255.0" GridPane.rowIndex="2">
+         <children>
+            <Label text="Price: $ " />
+            <TextField fx:id="spPriceDisplay" editable="false" />
+         </children>
+      </HBox>
+      <Button fx:id="spAddToOrderButton" alignment="CENTER" mnemonicParsing="false" onAction="#onspAddToOrderButtonClick" prefWidth="200.0" text="Add to Order" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Button>
+      <ImageView fx:id="spImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@DefaultPizza.jpg" />
+         </image></ImageView>
+   </children>
+</GridPane>

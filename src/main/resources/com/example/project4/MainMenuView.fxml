@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project4.MainMenuController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="449.0" text="RU Pizza">
+      <font>
+         <Font name="Dubai Light" size="28.0" />
+      </font>
+   </Label>
+   <GridPane alignment="CENTER" prefHeight="270.0" prefWidth="400.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <VBox.margin>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </VBox.margin>
+      <children>
+         <Button fx:id="specialty_pizza_button" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#onSpecialityPizzaButtonClick" prefWidth="180.0" text="Specialty Pizzas" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets />
+            </GridPane.margin>
+            <graphic>
+               <ImageView fitHeight="120.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@SpecialityIcon.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <Button fx:id="build_your_own_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#onBuildYourOwnPizzaButtonClick" prefWidth="180.0" text="Build Your Own Pizza" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets />
+            </GridPane.margin>
+            <graphic>
+               <ImageView fitHeight="85.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@BYO.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <Button fx:id="current_order_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#onCurrentOrderButtonClick" prefWidth="180.0" text="Current Order" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets />
+            </GridPane.margin>
+            <graphic>
+               <ImageView fitHeight="82.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@OrderCart.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <Button fx:id="store_order_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#onStoreOrdersButtonClick" prefWidth="180.0" text="Store Orders" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane.margin>
+               <Insets />
+            </GridPane.margin>
+            <graphic>
+               <ImageView fitHeight="86.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Store.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+      </children>
+   </GridPane>
+</VBox>
